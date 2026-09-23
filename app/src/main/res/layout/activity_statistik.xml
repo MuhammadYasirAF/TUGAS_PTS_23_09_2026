@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F0FA">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="24dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_header"
+            android:padding="24dp"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="📊 Statistik Pendaftar"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_card"
+            android:layout_margin="16dp">
+
+            <TextView
+                android:id="@+id/textViewTotal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Total Peserta: 0"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#4A148C"
+                android:gravity="center"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Bar Pelajar -->
+            <TextView
+                android:id="@+id/labelPelajar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pelajar: 0"
+                android:textColor="#333333" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="18dp"
+                android:layout_marginBottom="12dp"
+                android:background="#EDE7F6"
+                android:orientation="horizontal">
+                <View
+                    android:id="@+id/barPelajar"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0"
+                    android:background="#8E24AA" />
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#00000000" />
+            </LinearLayout>
+
+            <!-- Bar Umum -->
+            <TextView
+                android:id="@+id/labelUmum"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Umum: 0"
+                android:textColor="#333333" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="18dp"
+                android:layout_marginBottom="12dp"
+                android:background="#EDE7F6"
+                android:orientation="horizontal">
+                <View
+                    android:id="@+id/barUmum"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0"
+                    android:background="#AB47BC" />
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#00000000" />
+            </LinearLayout>
+
+            <!-- Bar Guru -->
+            <TextView
+                android:id="@+id/labelGuru"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Guru: 0"
+                android:textColor="#333333" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="18dp"
+                android:layout_marginBottom="4dp"
+                android:background="#EDE7F6"
+                android:orientation="horizontal">
+                <View
+                    android:id="@+id/barGuru"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0"
+                    android:background="#CE93D8" />
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#00000000" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_card"
+            android:layout_margin="16dp"
+            android:layout_marginTop="0dp"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/textViewWorkshop"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ikut Workshop: 0 dari 0 peserta"
+                android:textColor="#4A148C"
+                android:textStyle="bold"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/buttonShare"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:text="🔗 Bagikan Ringkasan"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#6A1B9A"
+            android:onClick="bagikanRingkasan" />
+
+        <Button
+            android:id="@+id/buttonKembali"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="Kembali"
+            android:textColor="#6A1B9A"
+            android:background="@drawable/bg_button_outline"
+            android:onClick="kembali" />
+
+    </LinearLayout>
+</ScrollView>

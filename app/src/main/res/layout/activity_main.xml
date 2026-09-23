@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F0FA"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="24dp">
+
+        <!-- HEADER -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_header"
+            android:padding="24dp"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="📋 Event Registration"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Gabungan User Interface + User Interaction"
+                android:textSize="13sp"
+                android:textColor="#E1BEE7" />
+        </LinearLayout>
+
+        <!-- CARD: FORM INPUT (User Interaction) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_card"
+            android:layout_margin="16dp"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Formulir Pendaftaran"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#4A148C"
+                android:layout_marginBottom="12dp" />
+
+            <EditText
+                android:id="@+id/editTextNama"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nama Lengkap"
+                android:inputType="textPersonName"
+                android:background="@android:drawable/edit_text" />
+
+            <EditText
+                android:id="@+id/editTextNoHp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:hint="Nomor HP"
+                android:inputType="phone"
+                android:background="@android:drawable/edit_text" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Kategori Peserta:"
+                android:textColor="#6A1B9A"
+                android:textStyle="bold" />
+
+            <RadioGroup
+                android:id="@+id/radioGroupKategori"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/radioButton1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pelajar"
+                    android:checked="true" />
+
+                <RadioButton
+                    android:id="@+id/radioButton2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="Umum" />
+
+                <RadioButton
+                    android:id="@+id/radioButton3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="Guru" />
+            </RadioGroup>
+
+            <CheckBox
+                android:id="@+id/checkBoxWorkshop"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Ikut sesi workshop tambahan" />
+
+            <Button
+                android:id="@+id/buttonSubmit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="DAFTAR SEKARANG"
+                android:backgroundTint="#6A1B9A"
+                android:textColor="#FFFFFF"
+                android:onClick="submitData" />
+        </LinearLayout>
+
+        <!-- CARD: COUNTER (User Interface) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_card"
+            android:layout_margin="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total Peserta Terdaftar"
+                android:textColor="#6A1B9A"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textViewCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="0"
+                android:textSize="52sp"
+                android:textStyle="bold"
+                android:textColor="#4A148C" />
+
+            <ProgressBar
+                android:id="@+id/progressKuota"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:layout_marginTop="12dp"
+                android:max="50"
+                android:progress="0"
+                android:progressTint="#8E24AA" />
+
+            <TextView
+                android:id="@+id/textViewSisaKuota"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Sisa Kuota: 50"
+                android:textSize="12sp"
+                android:textColor="#6A1B9A"
+                android:gravity="center" />
+
+            <Button
+                android:id="@+id/buttonStatistik"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="📊 Lihat Statistik"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#8E24AA"
+                android:onClick="bukaStatistik" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="12dp">
+
+                <Button
+                    android:id="@+id/buttonHapusTerakhir"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="8dp"
+                    android:text="Hapus Terakhir"
+                    android:textSize="12sp"
+                    android:textColor="#6A1B9A"
+                    android:background="@drawable/bg_button_outline"
+                    android:onClick="hapusTerakhir" />
+
+                <Button
+                    android:id="@+id/buttonReset"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Reset Semua"
+                    android:textSize="12sp"
+                    android:textColor="#6A1B9A"
+                    android:background="@drawable/bg_button_outline"
+                    android:onClick="resetData" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- CARD: RIWAYAT (User Interface + data dari User Interaction) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_card"
+            android:layout_margin="16dp"
+            android:layout_marginTop="8dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Riwayat Pendaftar"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#4A148C"
+                android:layout_marginBottom="8dp" />
+
+            <ListView
+                android:id="@+id/listViewRiwayat"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:divider="#E1BEE7"
+                android:dividerHeight="1dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
